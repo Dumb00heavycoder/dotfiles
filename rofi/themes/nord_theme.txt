@@ -1,0 +1,59 @@
+// vim: filetype=scss
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+
+  bg: rgba(46, 52, 64, 0.7); // Changed to RGBA with 0.7 opacity
+  bg-alt: rgba(59, 66, 82, 0.7); // Also made semi-transparent
+  fg: #81A1C1;
+  fg-alt: #eceff4;
+
+  background-color: @bg;
+  text-color: @fg;
+}
+
+window {
+  transparency: "real";
+  width: 400px; // Smaller width
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+inputbar {
+  background-color: @bg-alt;
+  children: [prompt, entry];
+}
+
+entry {
+  background-color: inherit;
+  padding: 8px 3px; // Reduced padding
+}
+
+prompt {
+  background-color: inherit;
+  padding: 8px;
+}
+
+listview {
+  lines: 6; // Reduced from 8 to 6 for compactness
+}
+
+element {
+  children: [element-icon, element-text];
+}
+
+element-icon {
+  padding: 8px 8px; // Slightly smaller
+}
+
+element-text {
+  padding: 8px 0;
+}
+
+element-text selected {
+  text-color: @fg-alt;
+}
